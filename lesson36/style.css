@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+
+.main{
+    background-color: #e7d2dd;
+    border: 1px solid black;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    overflow: auto;
+    height: 500px;
+
+}
+
+.block{
+    display: inline-block;
+    background-color: #c8f8cc;
+    border-radius: 31px;
+    margin: 5px;
+    padding: 40px;
+    min-width: 50px;
+    max-width: 300px;
+    box-shadow: -1px -1px 10px black;
+}
