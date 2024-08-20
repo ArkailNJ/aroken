@@ -29,8 +29,8 @@ body{
 
 .box__scale {
     position: absolute;
-    top: 100px;
-    left: 300px;
+    top: -100px;
+    left: -300px;
     right: 600px;
     height: 30px;
     background: #fff;
