@@ -1,22 +1,22 @@
-(function(){
-    
+(function () {
+
 
     // Burger
     document.addEventListener('click', burgerInit)
 
-    function burgerInit(e){
+    function burgerInit(e) {
         const burgerIcon = e.target.closest('.burger-icon')
         const burgerNavLink = e.target.closest('.nav__link')
 
-        if(!burgerIcon && !burgerNavLink) return
-        if(document.documentElement.clientWidth > 900) return
+        if (!burgerIcon && !burgerNavLink) return
+        if (document.documentElement.clientWidth > 900) return
 
-        if(!document.body.classList.contains('body--opened-menu')) {
+        if (!document.body.classList.contains('body--opened-menu')) {
             document.body.classList.add('body--opened-menu')
         } else {
             document.body.classList.remove('body--opened-menu')
         }
-    }   
+    }
 
 
     //Modal
@@ -26,17 +26,17 @@
     modalButton.addEventListener('click', openModal)
     modal.addEventListener('click', closeModal)
 
-    function openModal(e){
+    function openModal(e) {
         e.preventDefault()
         document.body.classList.toggle('body--opened-modal')
     }
 
-    function closeModal(e){
+    function closeModal(e) {
         e.preventDefault()
 
         const target = e.target
 
-        if (target.closest('.modal__cancel') || target.classList.contains('modal')){
+        if (target.closest('.modal__cancel') || target.classList.contains('modal')) {
             document.body.classList.remove('body--opened-modal')
         }
     }
@@ -46,12 +46,12 @@
     const tabControls = document.querySelector('.tab-controls')
     tabControls.addEventListener('click', toggleTab)
 
-    function toggleTab(event){
+    function toggleTab(event) {
         const tabControl = event.target.closest('.tab-controls__link')
 
         if (!tabControl) return
         event.preventDefault()
-        if(tabControl.classList.contains('tab-controls__link--active')) return
+        if (tabControl.classList.contains('tab-controls__link--active')) return
 
         const tabContentID = tabControl.getAttribute('href')
 
@@ -65,7 +65,7 @@
     //Accordion
     const accordionLists = document.querySelectorAll('.accordion-list')
 
-    accordionLists.forEach(el =>{
+    accordionLists.forEach(el => {
         el.addEventListener('click', (e) => {
 
             const accordionList = e.currentTarget
@@ -86,7 +86,7 @@
 
             accordionItem.classList.toggle('accordion-list__item--opened');
 
-            if(accordionItem.classList.contains('accordion-list__item--opened')) {
+            if (accordionItem.classList.contains('accordion-list__item--opened')) {
                 accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px'
             } else {
                 accordionContent.style.maxHeight = null
@@ -94,4 +94,35 @@
         })
     })
 
+    //Slider
+
+    const swiper = new Swiper('.gallery__swiper', {
+
+        slidesPerView: 1.5,
+        spaceBetween: 16,
+
+        pagination: {
+            el: '.gallery__pagination',
+            type: 'fraction',
+        },
+
+        navigation: {
+            nextEl: '.gallery__next',
+            prevEl: '.gallery__prev',
+        },
+
+        breakpoints: {
+
+            601:{
+                slidesPerView: 3,
+            },
+            801:{
+                spaceBetween: 32,
+            },
+
+            1101:{
+                slidesPerView: 4,
+            }
+        }
+    });
 })()
