@@ -868,6 +868,17 @@
         max-width: none;
     }
 
+    /* =================== */
+
+    .testimonials__inner{
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .testimonials__nav{
+        align-self: end;
+    }
+
 }
 
 @media (max-width:600px){
