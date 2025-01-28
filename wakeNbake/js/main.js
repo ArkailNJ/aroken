@@ -94,9 +94,9 @@
         })
     })
 
-    //Slider
+    //Slider-gallery
 
-    const swiper = new Swiper('.gallery__swiper', {
+    new Swiper('.gallery__swiper', {
 
         slidesPerView: 1.5,
         spaceBetween: 16,
@@ -113,15 +113,44 @@
 
         breakpoints: {
 
-            601:{
+            601: {
                 slidesPerView: 3,
             },
-            801:{
+            801: {
                 spaceBetween: 32,
             },
 
-            1101:{
+            1101: {
                 slidesPerView: 4,
+            }
+        }
+    });
+
+    //Slider-testmonials
+
+    new Swiper('.testimonials__slider', {
+
+        slidesPerView: 1,
+        spaceBetween: 0,
+        centeredSlides: true,
+
+        navigation: {
+            nextEl: '.testimonials__next',
+            prevEl: '.testimonials__prev',
+        },
+
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true,
+        },
+
+        breakpoints: {
+            901: {
+                slidesPerView: 1.5,
+            },
+
+            1201: {
+                slidesPerView: 2.1,
             }
         }
     });
